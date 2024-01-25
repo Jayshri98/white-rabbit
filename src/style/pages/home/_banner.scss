@@ -1,0 +1,162 @@
+.banner {
+  padding-top: 104px;
+  position: relative;
+  z-index: 11;
+  height: 100vh;
+  border-left-color: transparent;
+  background: linear-gradient(180deg, #03062f 0%, #180b74 100%);
+  @media (max-width: $media-lg) {
+    height: 100%;
+    padding-bottom: 100px;
+    padding-top: 150px;
+  }
+  &::after{
+    content: '';
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    background-image: url('/static/svg/contactform.svg');
+  }
+  &::before {
+    content: "";
+    background-color: transparent;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    height: 0;
+    border-left: 0px solid;
+    border-top: 110px solid #0000;
+    border-right: 160px solid #f1f5f9;
+    border-bottom: 0px solid;
+    @media (max-width: $media-lg) {
+      border-top: 0px solid;
+      border-right: 0px solid;
+    }
+  }
+  &::after {
+    content: "";
+    background-color: transparent;
+    left: 0;
+    bottom: 0;
+    z-index: 12;
+    position: absolute;
+    height: 0;
+    border-left: 90vw solid #f1f5f9;
+    border-top: 150px solid #0000;
+    border-right: 0 solid;
+    border-bottom: 0px solid;
+    @media (max-width: $media-lg) {
+      border-left: 0px solid;
+      border-top: 0px solid;
+    }
+  }
+  .flex {
+    display: flex;
+    gap: 257px;
+    @media (max-width: $media-lg) {
+      gap: 0;
+      justify-content: space-between;
+    }
+    @media (max-width: $media-md) {
+      flex-direction: column;
+    }
+    &__leftblock {
+      width: 100%;
+      max-width: 420px;
+      padding-top: 80px;
+      @media (max-width: $media-lg) {
+        max-width: none;
+        padding-top: 0;
+      }
+      .banner-heading {
+        font-family: $font-1;
+        color: $white;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 53px;
+        letter-spacing: 0.4px;
+        margin-top: 0;
+        margin-bottom: 24px;
+        @media (max-width: $media-xs) {
+          font-size: 30px;
+          line-height: 40px;
+          margin-bottom: 14px;
+        }
+      }
+      .banner-subheading {
+        color: $white-1;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 28px;
+        font-family: $font-1;
+        margin-top: 0;
+        margin-bottom: 44px;
+        max-width: 380px;
+        @media (max-width: $media-lg) {
+          max-width: none;
+        }
+        @media (max-width: $media-xs) {
+          font-size: 15px;
+          line-height: 20px;
+          margin-bottom: 30px;
+        }
+      }
+    }
+    &__rightblock {
+      width: 30%;
+      @media (max-width: $media-lg) {
+        margin-top: 80px;
+        width: 100%;
+      }
+      .bannerslider {
+        .slick-dots {
+          list-style-type: none;
+          padding: 0;
+          margin-top: 32px;
+          margin-bottom: 0;
+          display: flex;
+          gap: 12px;
+          justify-content: center;
+          li {
+            color: transparent;
+            background: rgba(255, 255, 255, 0.4);
+            width: 12px;
+            height: 12px;
+            border-radius: 100%;
+            border: transparent;
+            cursor: pointer;
+
+            button {
+              color: transparent;
+              background-color: transparent;
+              border: none;
+              cursor: pointer;
+              width: 12px;
+              height: 12px;
+              border-radius: 100%;
+            }
+
+            &:hover,
+            &.slick-active {
+              background: white;
+            }
+          }
+        }
+
+        &__img {
+          width: 100%;
+          max-width: 329px;
+          height: 453.999px;
+          object-fit: cover;
+          @media (max-width: $media-xs) {
+            max-width: none;
+            object-fit: none;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+}
